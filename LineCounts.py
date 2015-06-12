@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# coding=utf-8
+'''
+github: https://github.com/gitferry
+author: Fangyu Gai <gaigai508@gmail.com>
+date  : 12/06/2015
+'''
+
 import os
 
 class LineCounts(object):
