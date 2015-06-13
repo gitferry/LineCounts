@@ -9,9 +9,9 @@ date  : 12/06/2015
 import os
 
 class LineCounts(object):
-    file_type_list = ['py', 'cpp', 'js', 'c']
-    line_counts_dict = {'python': {}, 'c plus plus': {}, 'javaScript': {}, 'c': {}}
-    file_type_map = {'py': 'python', 'cpp': 'c plus plus', 'js': 'javaScript', 'c': 'c'}
+    file_type_list = ['py', 'cpp', 'js', 'c', 'h']
+    line_counts_dict = {'python': {}, 'c plus plus': {}, 'javaScript': {}, 'c': {}, 'header': {}}
+    file_type_map = {'py': 'python', 'cpp': 'c plus plus', 'js': 'javaScript', 'c': 'c', 'h': 'header'}
     file_list = []
     total_counts = 0
 
@@ -46,7 +46,7 @@ class LineCounts(object):
             if file_counts:
                 print file_type + ":"
                 for file_name, line_count in file_counts.items():
-                    print file_name + '\t' + str(line_count)
+                    print file_name.ljust(50) + str(line_count).rjust(50)
                     self.total_counts += line_count
 
         print "Total lines of", dir, "is", self.total_counts
